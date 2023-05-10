@@ -6,18 +6,7 @@ Combination of SQL like syntax to retrieve values from the database, load them t
 
 We want to use while select statements when we loop through many results of select statement f.e. batch jobs
 
-### **Syntax**
-
-```SQL
--- declaration: X++ variables
-SalesTable salesTable;
-;
-
-while select salesTable 
-{
-    Info(salesTable.SalesId);
-}
-```
+### **Syntax example**
 
 ```SQL
 -- declaration: X++ variables
