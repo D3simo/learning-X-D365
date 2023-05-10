@@ -64,8 +64,8 @@ SalesLine salesLine;
 while select salesTable 
     where salesTable.SalesStatus == SalesStatus::Backorder
     -- we swapped nested while with simple join salesLine
-    **join salesLine
-        where salesLine.SalesId == salesTable.SalesId**
+    join salesLine
+        where salesLine.SalesId == salesTable.SalesId
 {
     Info(strFmt("SalesId: %1, LineNumber %2, ItemId %3", 
                 salesLine.SalesId, salesLine.LineNum, salesLine.ItemId));
@@ -84,8 +84,8 @@ SalesLine salesLine;
 while select SalesId, LineNum, ItemId from salesLine
     where salesLine.SalesId == salesTable.SalesId
     -- by switching the order, exist join validates if the record exists, it doesn't retrieve or load any data
-    **exists join salesTable
-        where salesTable.SalesStatus == SalesStatus::Backorder**
+    exists join salesTable
+        where salesTable.SalesStatus == SalesStatus::Backorder
 {
     Info(strFmt("SalesId: %1, LineNumber %2, ItemId %3", 
                 salesLine.SalesId, salesLine.LineNum, salesLine.ItemId));
