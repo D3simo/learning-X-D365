@@ -1,14 +1,14 @@
 # Output Info log syntax
 
-By using different Infolog/Output methods there are different bars in the Interface
+By using different Infolog/Output methods there are different popup bars in D365
 
 ```X++
 class test
 {
     public static void main(Args _args) 
     {
-        info("Information notice tot he interface");
-        warning("Warnign notice to the interface");
+        info("Information notice to the interface");
+        warning("Warning notice to the interface");
         error("Error notice to the interface");
     }
 }
