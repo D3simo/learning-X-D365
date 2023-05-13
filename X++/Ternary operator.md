@@ -3,7 +3,7 @@
 In this example : Return value based on condition
 
 ```X++
-class test
+class test1
 {
     public static void main(Args _args) 
     {
