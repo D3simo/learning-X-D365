@@ -32,3 +32,37 @@ static void MacroDemo(Args _args)
     pause;
 }
 ```
+
+If you have any Syntax errors(f.e brackets in macroValue), try locaMacros instead
+
+```X++
+class MacroExampleJob
+{
+    public static void main(Args _args)
+    {
+        CustTable   custTable;
+        VendTable   ventTable;
+        ;
+
+        #localmacro.SelectCustomer
+        select * from custTable
+        #endmacro
+
+        #localmacro.SelectVendor
+        select * from vendTable
+        #endmacro
+
+        #localmacro.WhereClause
+        where %1.AccoutNum == %2
+            && %1.Currency == %3
+        #endmacro
+
+        #SelectCustomer
+        #WhereClause(custTable, '100', 'USD');
+
+        #SelectVendor
+        #WhereClause('vendTable, '1000', 'PKR');
+    }
+}
+
+```
