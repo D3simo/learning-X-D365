@@ -33,7 +33,7 @@ static void MacroDemo(Args _args)
 }
 ```
 
-If you have any Syntax errors(f.e brackets in macroValue), try locaMacros instead
+## If you have any Syntax errors(f.e brackets in macroValue), try locaMacros instead
 
 ```X++
 class MacroExampleJob
