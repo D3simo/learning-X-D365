@@ -55,7 +55,7 @@ static void MacroDemo(Args _args)
 }
 ```
 
-### If you have any Syntax errors(f.e brackets in macroValue), try locaMacros instead
+### If you have any Syntax errors(f.e brackets in macroValue), try localMacros instead
 
 ```X++
 class MacroExampleJob
@@ -86,7 +86,6 @@ class MacroExampleJob
         #WhereClause('vendTable, '1000', 'PKR');
     }
 }
-
 ```
 
 ## How to use Regular Expression in Dynamics AX
