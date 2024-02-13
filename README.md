@@ -61,7 +61,9 @@ select firstonly custTable;
 info("AccountNum: " + custTable.AccountNum);
 ```
 
-### **while select statement** <a name="WhileSelect"></a>
+<a name="WhileSelect"></a>
+
+### **while select statement**
 
 Combination of SQL like syntax to retrieve values from the database, load them to into table buffer variable. Then we loop through results that we retrieved from the database
 
