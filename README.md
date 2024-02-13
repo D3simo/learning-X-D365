@@ -3,9 +3,59 @@
 Here is my X++ guide and documentation, usefull guides  found around the internet or in the books
 
 ## Table of content
-1. [SQL Join](#oin)
+1. [SQL](#SQL)
+    2. [select](#Select)
 
-## **Joins** <a name="Join"></a>
+## **SQL** <a name="SQL"></a>
+
+## **select statement** <a name="Select"></a>
+
+### **Syntax example**
+
+```SQL
+-- declaration: X++ variables
+CustTable custTable;
+;
+
+-- select * from custTable  select custTable
+select custTable;
+    where custTable.AccountNum == "100001";
+info("AccountNum: " + custTable.AccountNum);
+```
+
+## **Good practises**
+
+### Fieldlist
+
+if code needs only specific fields then you should select Fieldlist instead of whole tableBuffer
+
+```SQL
+-- declaration: X++ variables
+CustTable custTable;
+;
+
+-- select specific fields from custTable variable
+select AccounNum, CustGroup from custTable;
+    where custTable.AccountNum == "100001";
+info("AccountNum: " + custTable.AccountNum);
+info("CustGroup: " + custTable.CustGroup);
+```
+
+### firstonly
+
+Similar to select top 1 in T-SQL, it tells the system to only take the very first record from the statement
+
+```SQL
+-- declaration: X++ variables
+CustTable custTable;
+;
+
+select firstonly custTable;
+    where custTable.AccountNum == "100001";
+info("AccountNum: " + custTable.AccountNum);
+```
+
+## **SQL joins** <a name="Join"></a>
 
 ### Join
 
