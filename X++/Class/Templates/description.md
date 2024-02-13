@@ -1,3 +1,5 @@
+# ClassDescription
+
 ```X++
 static ClassDescription description()
 {

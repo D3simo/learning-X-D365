@@ -1,3 +1,5 @@
+# new
+
 ```X++
 int new(int _fileId)
 {

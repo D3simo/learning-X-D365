@@ -1,3 +1,5 @@
+# Status message
+
 ```X++
 str getStatusMessage(int status)
 {
