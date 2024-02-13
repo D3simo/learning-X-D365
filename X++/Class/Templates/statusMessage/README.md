@@ -1,5 +1,6 @@
 # Status message
 
+```X++
 str getStatusMessage(int status)
 {
     str statusMessage;
@@ -23,3 +24,4 @@ str getStatusMessage(int status)
 
     return statusMessage;
 }
+```

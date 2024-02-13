@@ -1,5 +1,6 @@
 # new
 
+```X++
 int new(int _fileId)
 {
     ;
@@ -9,3 +10,4 @@ int new(int _fileId)
 
     return _fileId;
 }
+```
