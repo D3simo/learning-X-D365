@@ -1,6 +1,6 @@
 # **Joins**
 
-## Join
+## Join <a name="Join"></a>
 
 It is the same as **Inner join** in **T-SQL**. This will return row when there is a match in both tables.
 If there is **more than one row in the second table** that matches with record from the first table, this will result in **more rows in the result set** than what was found in the first table

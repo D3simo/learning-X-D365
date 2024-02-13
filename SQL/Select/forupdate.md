@@ -11,9 +11,7 @@ Select firstonly forupdate custTable
         ttscommit;
     }
 
-
 ==
-
 
 Select firstonly custTable
     where custTable.Accountnum = '1001';
