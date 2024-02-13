@@ -11,10 +11,17 @@ Here is my X++ guide and documentation, usefull guides  found around the interne
 2. [X++](#X)
     1. [Data types](#DataTypes)
     2. [Macros and consts](#Macros)
+    3. [Operators](#Operators)
+       1. [Relational operators](#RelationalOperators)
+       2. [Ternary operators](#TernaryOperatos)
 
-## **SQL** <a name="SQL"></a>
+<a name="SQL"></a>
 
-### **select statement** <a name="Select"></a>
+## **SQL**
+
+<a name="Select"></a>
+
+### **select statement**
 
 ### **Syntax example**
 
@@ -150,7 +157,9 @@ while select SalesId, LineNum, ItemId from salesLine
 
 It does not display all the results, it takes records 1 by 1, not all at the same time
 
-## **SQL joins** <a name="Join"></a>
+<a name="Join"></a>
+
+## **SQL joins**
 
 ### Join
 
@@ -205,9 +214,13 @@ This will return records from the first table,
 
 This return a row in the first table, if there is **no matching records in the second table**
 
-## **X++** <a name="X"></a>
+<a name="X"></a>
 
-### Primitive Data Types <a name="DataTypes"></a>
+## **X++**
+
+<a name="DataTypes"></a>
+
+### Primitive Data Types
 
 - Anytype / var To store any data type
 - Boolean To store true of false, This is a short number ( 1 or 0 )
@@ -225,7 +238,9 @@ Max is 31.12.2154
 - UtcDateTime To store year, month, day, hours, minutes and seconds in UTC
 Date portion as 1900-01-01 is treated as null value
 
-### Macros and const <a name="Macros"></a>
+<a name="Macros"></a>
+
+### Macros and const
 
 Macros and const variables are used to define something that will not be modified
 
@@ -292,4 +307,47 @@ class MacroExampleJob
     }
 }
 
+```
+
+<a name="Operators"></a>
+
+## Operators
+
+<a name="RelationalOperators"></a>
+
+### Relational operators
+
+    like : Returns true if expression1 is like expression2
+    
+    ! : Not
+
+    != : Inequality operator (not equal to)
+
+    && : Logiccal AND
+
+    || : Logical OR
+
+    < : Less than
+
+    <= : Less than or equal
+
+<a name="TernaryOperators"></a>
+
+### Ternary operator
+
+
+It's most commonly used in assignment operations, although it has other uses as well. 
+The ternary operator ? is a way of shortening an if-else clause, and is also called an immediate-if statement in other languages (IIf(condition,true-clause,false-clause) in VB, for example)
+In this example: Return value based on condition
+
+```X++
+class test1
+{
+    public static void main(Args _args) 
+    {
+        int i;
+        i = (4000 > 4) ? 1: 5;
+        info(int2str(i));
+    }
+}
 ```
