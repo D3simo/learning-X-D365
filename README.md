@@ -8,12 +8,17 @@ Here is my X++ guide and documentation, usefull guides  found around the interne
     1. [select](#Select)
     2. [while select](#WhileSelect)
     3. [join](#Join)
-2. [X++](#X)
+2. [X++](#X++)
     1. [Data types](#DataTypes)
     2. [Macros and consts](#Macros)
     3. [Operators](#Operators)
        1. [Relational operators](#RelationalOperators)
-       2. [Ternary operators](#TernaryOperatos)
+       2. [Ternary operators](#TernaryOperators)
+    4. [TTS](#TTS)
+    5. [Infolog](#Infolog)
+    6. [Regex](#Regex)
+    7. [Class](#Class)
+       1. [Template](#Template)
 
 <a name="SQL"></a>
 
@@ -214,7 +219,7 @@ This will return records from the first table,
 
 This return a row in the first table, if there is **no matching records in the second table**
 
-<a name="X"></a>
+<a name="X++"></a>
 
 ## **X++**
 
@@ -349,5 +354,128 @@ class test1
         i = (4000 > 4) ? 1: 5;
         info(int2str(i));
     }
+}
+```
+
+<a name="TTS"></a>
+
+## TTSBegin and TTSCommit
+
+It's a transaction block for data chnages between them.
+They store in the memory all the changes that we are making to one or many records
+
+### TTS inside loops
+
+If an error is thrown, only the last record will be reverted
+
+<a name="Infolog"></a>
+
+## Output Info log syntax
+
+By using different Infolog/Output methods there are different popup bars in D365
+
+```X++
+class test
+{
+    public static void main(Args _args) 
+    {
+        info("Information notice to the interface");
+        warning("Warning notice to the interface");
+        error("Error notice to the interface");
+    }
+}
+```
+
+![output](InfoLog.png)
+
+<a name="Regex"></a>
+
+## How to use Regular Expression in Dynamics AX
+
+A regular expression is a pattern that the regular expression engine attempts to match in input text. Dynamics AX also provides extensive support for regular expression. Using Regular Expression in Dynamics AX is very simple, due to the ability to call .NET objects from AX.
+
+```X++
+public static void TestRegex(Args _args) 
+{
+    #localmacro.VISARegex
+        '^4[0-9]{12}(?:[0-9]{3})2$'
+    #endmacro
+
+    System.Text.RegularExpression.Match         regexMatch;
+    System.Text.RegularExpression.Regex         regex;
+    ;
+
+    regex = new  System.Text.RegularExpression.Regex(#VISARegex);
+    regexMatch = regex.match('7213628173657346');
+
+    if (regexMatch.get_Success()) 
+    {
+        info("Success");
+    }
+}
+```
+
+<a name="Class"></a>
+
+## Class
+
+<a name="Templates"></a>
+
+### Templates
+
+<a name="new"></a>
+
+#### new
+
+```X++
+int new(int _fileId)
+{
+    ;
+
+    // fileId declared in for example classDeclaration
+    fileId = _fileId
+
+    return _fileId;
+}
+```
+
+<a name="StatusMessage"></a>
+
+#### Status message
+
+```X++
+str getStatusMessage(int status)
+{
+    str statusMessage;
+    ;
+
+    switch(status)
+    {
+        case -1:
+            statusMessage = "Status unknown";
+            break;
+        case 0:
+            statusMessage = "Success";
+            break;
+        case 1:
+            statusMessage = "Custom Error";
+            break;
+        case 2:
+            statusMessage = "Other custom error";
+            break;
+    }
+
+    return statusMessage;
+}
+```
+
+<a name="Description"></a>
+
+#### Description
+
+```X++
+static ClassDescription description()
+{
+    return "Custom class description";
 }
 ```
