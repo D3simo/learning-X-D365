@@ -8,7 +8,7 @@ Here is my X++ guide and documentation, usefull guides  found around the interne
     1. [select](#Select)
     2. [while select](#WhileSelect)
     3. [join](#Join)
-2. [X++](#X++)
+2. [X++](#X)
     1. [Data types](#DataTypes)
     2. [Macros and consts](#Macros)
 
@@ -148,7 +148,6 @@ while select SalesId, LineNum, ItemId from salesLine
 
 It does not display all the results, it takes records 1 by 1, not all at the same time
 
-
 ## **SQL joins** <a name="Join"></a>
 
 ### Join
@@ -197,26 +196,26 @@ This is the same as "**Left outer join**" in **T-SQL**.
 This will return records from the first table,
  only if **records exist in second table**.
  It will not return any records from the second table.
- Number of records will not increase even iof there will be more records in second table. 
+ Number of records will not increase even iof there will be more records in second table.
  System will stop looking after it finds one match in the second table
 
 ### NotExists join
 
 This return a row in the first table, if there is **no matching records in the second table**
 
-## **X++** <a name="X++"></a>
+## **X++** <a name="X"></a>
 
 ### Primitive Data Types <a name="DataTypes"></a>
 
 - Anytype / var To store any data type
 - Boolean To store true of false, This is a short number ( 1 or 0 )
-- Enum To storeenumerated list values, a set of named constants. 
+- Enum To storeenumerated list values, a set of named constants.
 Element with its value set to 0 is treated as null value
 - GUID To store a globally unqiue identifier    32 HEX        newGUID();
-- Int64 To store whole number values. 0 is treated as null value. 
+- Int64 To store whole number values. 0 is treated as null value.
 Internally a long number which is represen ted as 32 bit value
 - Real To store numbers with decimal points. 0.0 is treated as null value
-- Str To store numbers with decimal points. 
+- Str To store numbers with decimal points.
 An empty string " or "" is treated as null value
 - Date To store date ( day, month, year ) 1900-01-01 is treated as null value.
 Max is 31.12.2154
