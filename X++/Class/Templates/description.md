@@ -1,4 +1,4 @@
-# ClassDescription
+# Description
 
 ```X++
 static ClassDescription description()
