@@ -8,8 +8,9 @@ Here is my X++ guide and documentation, usefull guides  found around the interne
     1. [select](#Select)
     2. [while select](#WhileSelect)
     3. [join](#Join)
-1. [X++](#X++)
+2. [X++](#X++)
     1. [Data types](#DataTypes)
+    2. [Macros and consts](#Macros)
 
 ## **SQL** <a name="SQL"></a>
 
@@ -203,7 +204,7 @@ This will return records from the first table,
 
 This return a row in the first table, if there is **no matching records in the second table**
 
-## **X++**
+## **X++** <a name="X++"></a>
 
 ### Primitive Data Types <a name="DataTypes"></a>
 
@@ -222,3 +223,72 @@ Max is 31.12.2154
 - TimeOfDay To store time values, 00:00:00 is treated as null value
 - UtcDateTime To store year, month, day, hours, minutes and seconds in UTC
 Date portion as 1900-01-01 is treated as null value
+
+### Macros and const <a name="Macros"></a>
+
+Macros and const variables are used to define something that will not be modified
+
+```X++
+class test
+{
+    public static void main(Args _args) 
+    {
+        #define.myMacro("Macro value");
+        const str constValue = "Constant value";
+
+        info(strFmt("%1 - %2", #myMacro, constValue));
+    }
+}
+```
+
+```X++
+static void MacroDemo(Args _args) 
+{
+    str mName;
+    int mAge;
+    #define.MyName('I am Desimo')
+    #define.MyAge(30)
+
+    mName = #MyName;
+    mAge = #MyAge;
+
+    print mName
+    print mAge;
+
+    pause;
+}
+```
+
+#### If you have any Syntax errors(f.e brackets in macroValue), try locaMacros instead
+
+```X++
+class MacroExampleJob
+{
+    public static void main(Args _args)
+    {
+        CustTable   custTable;
+        VendTable   ventTable;
+        ;
+
+        #localmacro.SelectCustomer
+        select * from custTable
+        #endmacro
+
+        #localmacro.SelectVendor
+        select * from vendTable
+        #endmacro
+
+        #localmacro.WhereClause
+        where %1.AccoutNum == %2
+            && %1.Currency == %3
+        #endmacro
+
+        #SelectCustomer
+        #WhereClause(custTable, '100', 'USD');
+
+        #SelectVendor
+        #WhereClause('vendTable, '1000', 'PKR');
+    }
+}
+
+```
