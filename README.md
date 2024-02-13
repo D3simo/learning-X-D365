@@ -386,7 +386,7 @@ class test
 }
 ```
 
-![output](InfoLog.png)
+![output](/includes/InfoLog.png)
 
 <a name="Regex"></a>
 

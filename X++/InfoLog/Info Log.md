@@ -14,4 +14,4 @@ class test
 }
 ```
 
-![output](InfoLog.png)
+![output](/includes/InfoLog.png)
