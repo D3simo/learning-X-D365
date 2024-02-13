@@ -1,0 +1,11 @@
+```X++
+class test
+{
+    public static void main(Args _args) 
+    {
+        info("Information notice to the interface");
+        warning("Warning notice to the interface");
+        error("Error notice to the interface");
+    }
+}
+```
