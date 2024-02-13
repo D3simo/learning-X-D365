@@ -5,6 +5,7 @@ Here is my X++ guide and documentation, usefull guides  found around the interne
 ## Table of content
 1. [SQL](#SQL)
     2. [select](#Select)
+    3. [join](#Join)
 
 ## **SQL** <a name="SQL"></a>
 
