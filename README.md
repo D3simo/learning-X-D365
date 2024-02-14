@@ -10,14 +10,15 @@ Here is my X++ guide and documentation, usefull guides  found around the interne
     3. [join](#Join)
 2. [X++](#X++)
     1. [Data types](#DataTypes)
-    2. [Macros and consts](#Macros)
-    3. [Operators](#Operators)
+    2. [Access modifiers](#AccessModifiers)
+    3. [Macros and consts](#Macros)
+    4. [Operators](#Operators)
        1. [Relational operators](#RelationalOperators)
        2. [Ternary operators](#TernaryOperators)
-    4. [TTS](#TTS)
-    5. [Infolog](#Infolog)
-    6. [Regex](#Regex)
-    7. [Class](#Class)
+    5. [TTS](#TTS)
+    6. [Infolog](#Infolog)
+    7. [Regex](#Regex)
+    8. [Class](#Class)
        1. [Template](#Template)
 
 <a name="SQL"></a>
@@ -243,9 +244,17 @@ Max is 31.12.2154
 - UtcDateTime To store year, month, day, hours, minutes and seconds in UTC
 Date portion as 1900-01-01 is treated as null value
 
+<a name="AccessModifiers"></a>
+
+## Access modifiers
+
+Public: Default behaviour for classess and methods. A public class can be inherited and class methods can be overridden in subclasses and called outside the class.
+Protected: Only methods can be protected. A protected method can be overridden in subclasses, but can only be used inside the class hierarchy.
+Private: Both classes and methods can be set as private. However this will only affects methods. A private method can only be used within the current class.
+
 <a name="Macros"></a>
 
-### Macros and const
+## Macros and const
 
 Macros and const variables are used to define something that will not be modified
 
@@ -280,7 +289,7 @@ static void MacroDemo(Args _args)
 }
 ```
 
-#### If you have any Syntax errors(f.e brackets in macroValue), try locaMacros instead
+### If you have any Syntax errors(f.e brackets in macroValue), try locaMacros instead
 
 ```X++
 class MacroExampleJob
