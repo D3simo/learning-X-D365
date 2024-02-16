@@ -368,7 +368,7 @@ class test1
 
 <a name="TTS"></a>
 
-## TTSBegin and TTSCommit
+## ttsBegin, ttsCommit, ttsAbort
 
 It's a transaction block for data changes between them.
 They store in the memory all the changes that we are making to one or many records
