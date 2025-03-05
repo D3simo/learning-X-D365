@@ -1,2 +1,1 @@
-If you would liek to contribute, please go ahead you are very welcome
-Its a shared place to learn and develop new skills
+# If you would like to contribute, please go ahead you are very welcome, its a shared place to learn and develop new skills
